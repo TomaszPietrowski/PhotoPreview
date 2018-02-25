@@ -12,6 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    private var rootConnector: RootConnector!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         configureWindow()
@@ -25,7 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func connectRoot() {
-        window?.rootViewController = UIViewController()
+        guard let window = window else {
+            assertionFailure("No window available")
+            return
+        }
+        rootConnector = RootConnector(in: window)
     }
 }
 
