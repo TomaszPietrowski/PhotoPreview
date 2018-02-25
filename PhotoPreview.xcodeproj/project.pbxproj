@@ -19,6 +19,7 @@
 		D0BB33FA20430F1700ED64E5 /* PhotoPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB33F920430F1700ED64E5 /* PhotoPreviewViewController.swift */; };
 		D0F7F1CC20436AF200CAE8E8 /* KingfisherImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F7F1CB20436AF200CAE8E8 /* KingfisherImageLoader.swift */; };
 		D0F7F1CE20436BB600CAE8E8 /* UIImageView+setImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F7F1CD20436BB600CAE8E8 /* UIImageView+setImage.swift */; };
+		D0F7F1D020436CE200CAE8E8 /* UIView+addSubviewWithConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F7F1CF20436CE200CAE8E8 /* UIView+addSubviewWithConstraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		D0BB33F920430F1700ED64E5 /* PhotoPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewViewController.swift; sourceTree = "<group>"; };
 		D0F7F1CB20436AF200CAE8E8 /* KingfisherImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherImageLoader.swift; sourceTree = "<group>"; };
 		D0F7F1CD20436BB600CAE8E8 /* UIImageView+setImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+setImage.swift"; sourceTree = "<group>"; };
+		D0F7F1CF20436CE200CAE8E8 /* UIView+addSubviewWithConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addSubviewWithConstraints.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 			children = (
 				D0F7F1CB20436AF200CAE8E8 /* KingfisherImageLoader.swift */,
 				D0F7F1CD20436BB600CAE8E8 /* UIImageView+setImage.swift */,
+				D0F7F1CF20436CE200CAE8E8 /* UIView+addSubviewWithConstraints.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				D0BB33F720430E5400ED64E5 /* PhotoPreviewPresenter.swift in Sources */,
 				D0F7F1CE20436BB600CAE8E8 /* UIImageView+setImage.swift in Sources */,
 				D0BB33F420430D5800ED64E5 /* PhotoData.swift in Sources */,
+				D0F7F1D020436CE200CAE8E8 /* UIView+addSubviewWithConstraints.swift in Sources */,
 				D0BB33F020430D1100ED64E5 /* PhotoPreviewDisplayData.swift in Sources */,
 				D0BB33D62042FBDF00ED64E5 /* AppDelegate.swift in Sources */,
 			);
