@@ -22,7 +22,12 @@ class KingfisherImageLoader: ImageLoader {
             with: url,
             placeholder: placeholder,
             options: animated ? [.transition(.fade(0.5))] : nil
-        )
+        ) { (image, _, _, _) in
+            guard let image = image else {
+                return
+            }
+            completion?(image.size)
+        }
     }
     
     private func setupActivityIndicator(in imageView: UIImageView) {
