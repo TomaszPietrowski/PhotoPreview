@@ -18,6 +18,15 @@ class RootConnector {
     }
     
     private func showMainView() {
-        window.rootViewController = UIViewController()
+        let photos = (1...10).map {
+            PhotoData(
+                imageURL: URL(string: "https://picsum.photos/2000/?image=\($0)")!,
+                thumbnailURL: URL(string: "https://picsum.photos/200/?image=\($0)")!
+            )
+        }
+        let displayData = PhotoPreviewDisplayData(photos: photos, selectedPhotoIndex: 0)
+        let connector = PhotoPreviewConnector(displayData: displayData)
+        let viewController = connector.photoPreviewViewController()
+        window.rootViewController = viewController
     }
 }
