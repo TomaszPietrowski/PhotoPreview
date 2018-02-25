@@ -16,9 +16,19 @@ class PhotoPreviewPresenter {
     
     private let connector: PhotoPreviewConnector
     private let displayData: PhotoPreviewDisplayData
+    private let imageLoader: ImageLoader
     
-    init(connector: PhotoPreviewConnector, displayData: PhotoPreviewDisplayData) {
+    init(connector: PhotoPreviewConnector, displayData: PhotoPreviewDisplayData, imageLoader: ImageLoader = KingfisherImageLoader()) {
         self.connector = connector
         self.displayData = displayData
+        self.imageLoader = imageLoader
+    }
+    
+    func viewDidLayoutSubviews() {
+        view?.scrollToPhoto(at: displayData.selectedPhotoIndex)
+    }
+    
+    func configureCell(_ cell: PhotoPreviewCell, at index: Int) {
+        cell.displayImage(displayData.photos[index], imageLoader: imageLoader)
     }
 }
