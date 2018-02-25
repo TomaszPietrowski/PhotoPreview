@@ -12,7 +12,7 @@ protocol PhotoPreviewView: class {
     func scrollToPhoto(at index: Int)
 }
 
-class PhotoPreviewViewController: UIViewController, PhotoPreviewView, UICollectionViewDataSource {
+class PhotoPreviewViewController: UIViewController, PhotoPreviewView, UICollectionViewDataSource, UICollectionViewDataSourcePrefetching {
     
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
@@ -20,6 +20,7 @@ class PhotoPreviewViewController: UIViewController, PhotoPreviewView, UICollecti
         collectionView.register(PhotoPreviewCell.self)
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.isPagingEnabled = true
+        collectionView.prefetchDataSource = self
         return collectionView
     }()
     
@@ -76,5 +77,9 @@ class PhotoPreviewViewController: UIViewController, PhotoPreviewView, UICollecti
         let cell: PhotoPreviewCell = collectionView.dequeueReusableCell(for: indexPath)
         presenter.configureCell(cell, at: indexPath.row)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        presenter.prefetchItems(at: indexPaths)
     }
 }

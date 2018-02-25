@@ -6,6 +6,8 @@
 //  Copyright © 2018 Tomasz Pietrowski. All rights reserved.
 //
 
+import Foundation
+
 class PhotoPreviewPresenter {
     
     weak var view: PhotoPreviewView?
@@ -17,11 +19,13 @@ class PhotoPreviewPresenter {
     private let connector: PhotoPreviewConnector
     private let displayData: PhotoPreviewDisplayData
     private let imageLoader: ImageLoader
+    private let imagePrefetcher: ImagesPrefetcher
     
-    init(connector: PhotoPreviewConnector, displayData: PhotoPreviewDisplayData, imageLoader: ImageLoader = KingfisherImageLoader()) {
+    init(connector: PhotoPreviewConnector, displayData: PhotoPreviewDisplayData, imageLoader: ImageLoader = KingfisherImageLoader(), imagePrefetcher: ImagesPrefetcher = KingfisherImagePrefetcher()) {
         self.connector = connector
         self.displayData = displayData
         self.imageLoader = imageLoader
+        self.imagePrefetcher = imagePrefetcher
     }
     
     func viewDidLayoutSubviews() {
@@ -30,5 +34,10 @@ class PhotoPreviewPresenter {
     
     func configureCell(_ cell: PhotoPreviewCell, at index: Int) {
         cell.displayImage(displayData.photos[index], imageLoader: imageLoader)
+    }
+    
+    func prefetchItems(at indexPaths: [IndexPath]) {
+        let urls = indexPaths.map { displayData.photos[$0.row].imageURL }
+        imagePrefetcher.prefetch(urls: urls)
     }
 }

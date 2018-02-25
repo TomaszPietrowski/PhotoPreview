@@ -25,6 +25,7 @@
 		D0F7F1D620436EC600CAE8E8 /* UIImage+fromColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F7F1D520436EC600CAE8E8 /* UIImage+fromColor.swift */; };
 		D0F7F1D820436FF200CAE8E8 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F7F1D720436FF200CAE8E8 /* ReusableView.swift */; };
 		D0F7F1DA2043703B00CAE8E8 /* UICollectionView+registering.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F7F1D92043703B00CAE8E8 /* UICollectionView+registering.swift */; };
+		D0F7F1DC20437A3500CAE8E8 /* KingfisherImagePrefetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F7F1DB20437A3500CAE8E8 /* KingfisherImagePrefetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		D0F7F1D520436EC600CAE8E8 /* UIImage+fromColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+fromColor.swift"; sourceTree = "<group>"; };
 		D0F7F1D720436FF200CAE8E8 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		D0F7F1D92043703B00CAE8E8 /* UICollectionView+registering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+registering.swift"; sourceTree = "<group>"; };
+		D0F7F1DB20437A3500CAE8E8 /* KingfisherImagePrefetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingfisherImagePrefetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				D0F7F1CB20436AF200CAE8E8 /* KingfisherImageLoader.swift */,
+				D0F7F1DB20437A3500CAE8E8 /* KingfisherImagePrefetcher.swift */,
 				D0F7F1D320436E4600CAE8E8 /* Colors.swift */,
 				D0F7F1D720436FF200CAE8E8 /* ReusableView.swift */,
 				D0F7F1D92043703B00CAE8E8 /* UICollectionView+registering.swift */,
@@ -339,6 +342,7 @@
 				D0BB33F020430D1100ED64E5 /* PhotoPreviewDisplayData.swift in Sources */,
 				D0F7F1D620436EC600CAE8E8 /* UIImage+fromColor.swift in Sources */,
 				D0BB33D62042FBDF00ED64E5 /* AppDelegate.swift in Sources */,
+				D0F7F1DC20437A3500CAE8E8 /* KingfisherImagePrefetcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
