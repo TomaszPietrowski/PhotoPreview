@@ -23,6 +23,8 @@
 		D0F7F1D220436DDC00CAE8E8 /* PhotoPreviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F7F1D120436DDC00CAE8E8 /* PhotoPreviewCell.swift */; };
 		D0F7F1D420436E4600CAE8E8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F7F1D320436E4600CAE8E8 /* Colors.swift */; };
 		D0F7F1D620436EC600CAE8E8 /* UIImage+fromColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F7F1D520436EC600CAE8E8 /* UIImage+fromColor.swift */; };
+		D0F7F1D820436FF200CAE8E8 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F7F1D720436FF200CAE8E8 /* ReusableView.swift */; };
+		D0F7F1DA2043703B00CAE8E8 /* UICollectionView+registering.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F7F1D92043703B00CAE8E8 /* UICollectionView+registering.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		D0F7F1D120436DDC00CAE8E8 /* PhotoPreviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPreviewCell.swift; sourceTree = "<group>"; };
 		D0F7F1D320436E4600CAE8E8 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		D0F7F1D520436EC600CAE8E8 /* UIImage+fromColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+fromColor.swift"; sourceTree = "<group>"; };
+		D0F7F1D720436FF200CAE8E8 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		D0F7F1D92043703B00CAE8E8 /* UICollectionView+registering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+registering.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +187,8 @@
 			children = (
 				D0F7F1CB20436AF200CAE8E8 /* KingfisherImageLoader.swift */,
 				D0F7F1D320436E4600CAE8E8 /* Colors.swift */,
+				D0F7F1D720436FF200CAE8E8 /* ReusableView.swift */,
+				D0F7F1D92043703B00CAE8E8 /* UICollectionView+registering.swift */,
 				D0F7F1CD20436BB600CAE8E8 /* UIImageView+setImage.swift */,
 				D0F7F1D520436EC600CAE8E8 /* UIImage+fromColor.swift */,
 				D0F7F1CF20436CE200CAE8E8 /* UIView+addSubviewWithConstraints.swift */,
@@ -323,8 +329,10 @@
 				D0BB33FA20430F1700ED64E5 /* PhotoPreviewViewController.swift in Sources */,
 				D0BB33EA204304EE00ED64E5 /* RootConnector.swift in Sources */,
 				D0F7F1CC20436AF200CAE8E8 /* KingfisherImageLoader.swift in Sources */,
+				D0F7F1D820436FF200CAE8E8 /* ReusableView.swift in Sources */,
 				D0BB33EC20430BFD00ED64E5 /* PhotoPreviewConnector.swift in Sources */,
 				D0BB33F720430E5400ED64E5 /* PhotoPreviewPresenter.swift in Sources */,
+				D0F7F1DA2043703B00CAE8E8 /* UICollectionView+registering.swift in Sources */,
 				D0F7F1CE20436BB600CAE8E8 /* UIImageView+setImage.swift in Sources */,
 				D0BB33F420430D5800ED64E5 /* PhotoData.swift in Sources */,
 				D0F7F1D020436CE200CAE8E8 /* UIView+addSubviewWithConstraints.swift in Sources */,
