@@ -84,6 +84,7 @@ final class PhotoSelectionViewController: UICollectionViewController, UICollecti
         collectionView?.backgroundColor = Colors.PhotoSelection.background
         collectionView?.dataSource = self
         collectionView?.delegate = self
+        collectionView?.register(PhotoSelectionCell.self)
     }
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -98,6 +99,15 @@ final class PhotoSelectionViewController: UICollectionViewController, UICollecti
         let cell: PhotoSelectionCell = collectionView.dequeueReusableCell(for: indexPath)
         presenter.configureCell(cell, at: indexPath.row)
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let imageSide = (view.frame.width - 50.0) / 3
+        return CGSize(width: imageSide, height: imageSide)
     }
 }
 
