@@ -8,14 +8,18 @@
 
 import UIKit
 
-protocol PhotoSelectionConnecting { }
+protocol PhotoSelectionConnecting {
+    func showPhotoPreview(displayData: PhotoPreviewDisplayData)
+}
 
 final class PhotoSelectionConnector: PhotoSelectionConnecting {
     
     private let factory: PhotoUseCaseProducing
+    private weak var navigationController: UINavigationController!
     
-    init(factory: PhotoUseCaseProducing) {
+    init(factory: PhotoUseCaseProducing, navigationController: UINavigationController) {
         self.factory = factory
+        self.navigationController = navigationController
     }
     
     func getPhotoSelectionViewController() -> UIViewController {
@@ -24,5 +28,16 @@ final class PhotoSelectionConnector: PhotoSelectionConnecting {
         presenter.view = viewController
         
         return viewController
+    }
+    
+    func showPhotoPreview(displayData: PhotoPreviewDisplayData) {
+        let connector = PhotoPreviewConnector(displayData: displayData)
+        let viewController = connector.photoPreviewViewController()
+        
+        connector.onDismiss = { [viewController] in
+            viewController.dismiss(animated: true, completion: nil)
+        }
+        
+        navigationController?.present(viewController, animated: true, completion: nil)
     }
 }

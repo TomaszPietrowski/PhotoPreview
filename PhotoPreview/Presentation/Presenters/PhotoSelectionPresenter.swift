@@ -41,6 +41,7 @@ final class PhotoSelectionPresenter: PhotoSelectionPresenting {
     }
     
     func didSelecCell(at index: Int) {
-        //TODO: Show photo preview
+        let photoPreviewDisplayData = PhotoPreviewDisplayData(photos: photos, selectedPhotoIndex: index)
+        connector.showPhotoPreview(displayData: photoPreviewDisplayData)
     }
 }

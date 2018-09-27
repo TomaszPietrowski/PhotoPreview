@@ -10,8 +10,9 @@ import UIKit
 
 class RootConnector {
     
-    private lazy var useCaseFactory = UseCaseFactory(photoGateway: PicsumPhotoGateway())
     private let window: UIWindow
+    
+    private lazy var useCaseFactory = UseCaseFactory(photoGateway: PicsumPhotoGateway())
     
     init(in window: UIWindow) {
         self.window = window
@@ -19,8 +20,13 @@ class RootConnector {
     }
     
     private func showMainView() {
-        let connector = PhotoSelectionConnector(factory: useCaseFactory)
-        let viewController = connector.getPhotoSelectionViewController()
-        window.rootViewController = viewController
+        let navigationController = UINavigationController()
+        let connector = PhotoSelectionConnector(factory: useCaseFactory, navigationController: navigationController)
+        let photoSelectionViewController = connector.getPhotoSelectionViewController()
+        
+        navigationController.viewControllers = [photoSelectionViewController]
+        navigationController.navigationBar.isHidden = true
+        
+        window.rootViewController = navigationController
     }
 }
