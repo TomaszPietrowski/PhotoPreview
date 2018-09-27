@@ -15,11 +15,14 @@ protocol PhotoGateway {
 final class PicsumPhotoGateway: PhotoGateway {
     
     func getPhotos(count: Int) -> [PhotoData] {
-        return (1...count).map {
-            PhotoData(
-                imageURL: URL(string: "https://picsum.photos/2000/?image=\($0)")!,
-                thumbnailURL: URL(string: "https://picsum.photos/200/?image=\($0)")!
-            )
-        }
+        let seed = Int(arc4random_uniform(1000))
+        return (1...count)
+            .map { $0 + seed }
+            .map {
+                PhotoData(
+                    imageURL: URL(string: "https://picsum.photos/2000/?image=\($0)")!,
+                    thumbnailURL: URL(string: "https://picsum.photos/200/?image=\($0)")!
+                )
+            }
     }
 }
