@@ -33,6 +33,12 @@ class PhotoPreviewViewController: UIViewController, PhotoPreviewView, UICollecti
         return flowLayout
     }()
     
+    private let closeButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.setImage(#imageLiteral(resourceName: "closeIcon"), for: .normal)
+        return button
+    }()
+    
     private let presenter: PhotoPreviewPresenter
     
     init(presenter: PhotoPreviewPresenter) {
@@ -47,6 +53,7 @@ class PhotoPreviewViewController: UIViewController, PhotoPreviewView, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        setupCloseButton()
     }
     
     override func viewDidLayoutSubviews() {
@@ -67,6 +74,21 @@ class PhotoPreviewViewController: UIViewController, PhotoPreviewView, UICollecti
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         collectionView.dataSource = self
+    }
+    
+    private func setupCloseButton() {
+        view.addSubview(closeButton, with: [
+            closeButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 25.0),
+            closeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15.0),
+            closeButton.heightAnchor.constraint(equalToConstant: 24.0),
+            closeButton.widthAnchor.constraint(equalTo: closeButton.heightAnchor)
+        ])
+        
+        closeButton.addTarget(self, action: #selector(didTapCloseButton), for: .touchUpInside)
+    }
+    
+    @objc private func didTapCloseButton() {
+        presenter.didSelectCloseButton()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

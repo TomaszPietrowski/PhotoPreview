@@ -40,4 +40,8 @@ class PhotoPreviewPresenter {
         let urls = indexPaths.map { displayData.photos[$0.row].imageURL }
         imagePrefetcher.prefetch(urls: urls)
     }
+    
+    func didSelectCloseButton() {
+        connector.onDismiss?()
+    }
 }
