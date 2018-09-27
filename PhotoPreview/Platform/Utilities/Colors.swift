@@ -14,5 +14,12 @@ enum Colors {
         static let background = black
     }
     
+    enum PhotoSelection {
+        static let background = white
+        static let photoBackground = gray
+    }
+    
     private static let black = UIColor.black
+    private static let white = UIColor.white
+    private static let gray = UIColor.lightGray
 }
