@@ -9,7 +9,7 @@
 protocol UseCaseProducing: PhotoUseCaseProducing { }
 
 protocol PhotoUseCaseProducing {
-    func getPhotos(count: Int) -> UseCase<[PhotoData]>
+    func getPhotosUseCase(count: Int) -> UseCase<[PhotoData]>
 }
 
 final class UseCaseFactory: UseCaseProducing {
@@ -20,7 +20,7 @@ final class UseCaseFactory: UseCaseProducing {
         self.photoGateway = photoGateway
     }
     
-    func getPhotos(count: Int) -> UseCase<[PhotoData]> {
+    func getPhotosUseCase(count: Int) -> UseCase<[PhotoData]> {
         return UseCase { [photoGateway] in
             photoGateway.getPhotos(count: count)
         }

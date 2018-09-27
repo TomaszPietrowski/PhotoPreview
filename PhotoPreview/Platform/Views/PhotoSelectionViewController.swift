@@ -31,6 +31,7 @@ protocol PhotoSelectionPresenting {
     var numberOfPhotos: Int { get }
     func viewReady()
     func configureCell(_ cell: PhotoSelectionCell, at index: Int)
+    func didSelecCell(at index: Int)
 }
 
 final class PhotoSelectionPresenter: PhotoSelectionPresenting {
@@ -38,23 +39,30 @@ final class PhotoSelectionPresenter: PhotoSelectionPresenting {
     weak var view: PhotoSelectionView!
     
     var numberOfPhotos: Int {
-        return 12 //TODO: pass proper value
+        return photos.count
     }
     
     private let connector: PhotoSelectionConnecting
     private let factory: PhotoUseCaseProducing
+    private let imageLoader: ImageLoader
+    private var photos: [PhotoData] = []
     
-    init(connector: PhotoSelectionConnecting, factory: PhotoUseCaseProducing) {
+    init(connector: PhotoSelectionConnecting, factory: PhotoUseCaseProducing, imageLoader: ImageLoader = KingfisherImageLoader()) {
         self.connector = connector
         self.factory = factory
+        self.imageLoader = imageLoader //TODO: Pass image loader and remove default value
     }
     
     func viewReady() {
-        //TODO: get photo data
+        photos = factory.getPhotosUseCase(count: 24).execute()
     }
     
     func configureCell(_ cell: PhotoSelectionCell, at index: Int) {
-        //TODO: setup cell
+        cell.displayImage(photos[index].thumbnailURL, imageLoader: imageLoader)
+    }
+    
+    func didSelecCell(at index: Int) {
+        //TODO: Show photo preview
     }
 }
 
@@ -101,6 +109,10 @@ final class PhotoSelectionViewController: UICollectionViewController, UICollecti
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.didSelecCell(at: indexPath.row)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10.0, left: 10.0, bottom: 10.0, right: 10.0)
     }
@@ -140,7 +152,7 @@ final class PhotoSelectionCell: UICollectionViewCell {
         contentView.addSubview(imageView, with: constraints)
     }
     
-    func displayImage(_ image: UIImage) {
-        imageView.image = image
+    func displayImage(_ imageURL: URL, imageLoader: ImageLoader) {
+        imageView.setImage(using: imageURL, imageLoader: imageLoader)
     }
 }

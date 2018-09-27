@@ -10,6 +10,7 @@ import UIKit
 
 class RootConnector {
     
+    private lazy var useCaseFactory = UseCaseFactory(photoGateway: PicsumPhotoGateway())
     private let window: UIWindow
     
     init(in window: UIWindow) {
@@ -18,15 +19,8 @@ class RootConnector {
     }
     
     private func showMainView() {
-        let photos = (1...10).map {
-            PhotoData(
-                imageURL: URL(string: "https://picsum.photos/2000/?image=\($0)")!,
-                thumbnailURL: URL(string: "https://picsum.photos/200/?image=\($0)")!
-            )
-        }
-        let displayData = PhotoPreviewDisplayData(photos: photos, selectedPhotoIndex: 0)
-        let connector = PhotoPreviewConnector(displayData: displayData)
-        let viewController = connector.photoPreviewViewController()
+        let connector = PhotoSelectionConnector(factory: useCaseFactory)
+        let viewController = connector.getPhotoSelectionViewController()
         window.rootViewController = viewController
     }
 }
