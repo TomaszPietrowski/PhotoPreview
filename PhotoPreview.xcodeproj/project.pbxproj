@@ -106,7 +106,7 @@
 			children = (
 				D0BB33F120430D3200ED64E5 /* Domain */,
 				D0BB33ED20430CDE00ED64E5 /* Presentation */,
-				D0BB33E7204304C100ED64E5 /* UI */,
+				D0BB33E7204304C100ED64E5 /* Platform */,
 				D0BB33D52042FBDF00ED64E5 /* AppDelegate.swift */,
 				D005700D20436363005D7FCE /* LaunchScreen.storyboard */,
 				D0BB33DC2042FBDF00ED64E5 /* Assets.xcassets */,
@@ -115,14 +115,14 @@
 			path = PhotoPreview;
 			sourceTree = "<group>";
 		};
-		D0BB33E7204304C100ED64E5 /* UI */ = {
+		D0BB33E7204304C100ED64E5 /* Platform */ = {
 			isa = PBXGroup;
 			children = (
 				D0F7F1CA20436AC000CAE8E8 /* Utilities */,
 				D0BB33F820430F0800ED64E5 /* Views */,
 				D0BB33E8204304D200ED64E5 /* Connectors */,
 			);
-			path = UI;
+			path = Platform;
 			sourceTree = "<group>";
 		};
 		D0BB33E8204304D200ED64E5 /* Connectors */ = {
