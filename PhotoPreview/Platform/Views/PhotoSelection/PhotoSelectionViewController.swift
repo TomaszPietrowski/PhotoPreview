@@ -60,7 +60,8 @@ final class PhotoSelectionViewController: UICollectionViewController, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let imageSide = (view.frame.width - 50.0) / 3
-        return CGSize(width: imageSide, height: imageSide)
+        let itemsInRow = CGFloat(presenter.numberOfPhotosInRow)
+        let itemSide = (view.frame.width - ((itemsInRow + 1) * 10.0)) / itemsInRow
+        return CGSize(width: itemSide, height: itemSide)
     }
 }

@@ -8,6 +8,7 @@
 
 protocol PhotoSelectionPresenting {
     var numberOfPhotos: Int { get }
+    var numberOfPhotosInRow: Int { get }
     func viewReady()
     func configureCell(_ cell: PhotoSelectionCell, at index: Int)
     func didSelecCell(at index: Int)
@@ -19,6 +20,10 @@ final class PhotoSelectionPresenter: PhotoSelectionPresenting {
     
     var numberOfPhotos: Int {
         return photos.count
+    }
+    
+    var numberOfPhotosInRow: Int {
+        return 3
     }
     
     private let connector: PhotoSelectionConnecting
