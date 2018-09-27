@@ -39,9 +39,9 @@ class PhotoPreviewViewController: UIViewController, PhotoPreviewView, UICollecti
         return button
     }()
     
-    private let presenter: PhotoPreviewPresenter
+    private let presenter: PhotoPreviewPresenting
     
-    init(presenter: PhotoPreviewPresenter) {
+    init(presenter: PhotoPreviewPresenting) {
         self.presenter = presenter
         super.init(nibName: nil, bundle: nil)
     }
@@ -58,7 +58,7 @@ class PhotoPreviewViewController: UIViewController, PhotoPreviewView, UICollecti
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        presenter.viewDidLayoutSubviews()
+        presenter.viewReady()
     }
     
     func scrollToPhoto(at index: Int) {

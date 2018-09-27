@@ -8,7 +8,15 @@
 
 import Foundation
 
-class PhotoPreviewPresenter {
+protocol PhotoPreviewPresenting {
+    var numberOfPhotos: Int { get }
+    func viewReady()
+    func configureCell(_ cell: PhotoPreviewCell, at index: Int)
+    func prefetchItems(at indexPaths: [IndexPath])
+    func didSelectCloseButton()
+}
+
+class PhotoPreviewPresenter: PhotoPreviewPresenting {
     
     weak var view: PhotoPreviewView?
     
@@ -28,7 +36,7 @@ class PhotoPreviewPresenter {
         self.imagePrefetcher = imagePrefetcher
     }
     
-    func viewDidLayoutSubviews() {
+    func viewReady() {
         view?.scrollToPhoto(at: displayData.selectedPhotoIndex)
     }
     
