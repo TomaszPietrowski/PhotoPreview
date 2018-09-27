@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A42F037DC7A34A1DC5DF2A5D /* Pods_PhotoPreview.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 666E9BAD83B15D9D69420796 /* Pods_PhotoPreview.framework */; };
 		D005700E20436364005D7FCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D005700D20436363005D7FCE /* LaunchScreen.storyboard */; };
+		D095D565215CCEE200A04243 /* PicsumPhotoGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095D564215CCEE200A04243 /* PicsumPhotoGateway.swift */; };
 		D0BB33D62042FBDF00ED64E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB33D52042FBDF00ED64E5 /* AppDelegate.swift */; };
 		D0BB33DD2042FBDF00ED64E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0BB33DC2042FBDF00ED64E5 /* Assets.xcassets */; };
 		D0BB33EA204304EE00ED64E5 /* RootConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB33E9204304EE00ED64E5 /* RootConnector.swift */; };
@@ -33,6 +34,7 @@
 		666E9BAD83B15D9D69420796 /* Pods_PhotoPreview.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotoPreview.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7C6DCA9861FE2E67D2CD5C /* Pods-PhotoPreview.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotoPreview.release.xcconfig"; path = "Pods/Target Support Files/Pods-PhotoPreview/Pods-PhotoPreview.release.xcconfig"; sourceTree = "<group>"; };
 		D005700D20436363005D7FCE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D095D564215CCEE200A04243 /* PicsumPhotoGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicsumPhotoGateway.swift; sourceTree = "<group>"; };
 		D0BB33D22042FBDF00ED64E5 /* PhotoPreview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoPreview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0BB33D52042FBDF00ED64E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0BB33DC2042FBDF00ED64E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -81,6 +83,14 @@
 				666E9BAD83B15D9D69420796 /* Pods_PhotoPreview.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D095D563215CCE4900A04243 /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+				D095D564215CCEE200A04243 /* PicsumPhotoGateway.swift */,
+			);
+			path = Gateways;
 			sourceTree = "<group>";
 		};
 		D0BB33C92042FBDF00ED64E5 = {
@@ -154,6 +164,7 @@
 		D0BB33F120430D3200ED64E5 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				D095D563215CCE4900A04243 /* Gateways */,
 				D0BB33F220430D4200ED64E5 /* Entities */,
 			);
 			path = Domain;
@@ -328,6 +339,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0F7F1D220436DDC00CAE8E8 /* PhotoPreviewCell.swift in Sources */,
+				D095D565215CCEE200A04243 /* PicsumPhotoGateway.swift in Sources */,
 				D0F7F1D420436E4600CAE8E8 /* Colors.swift in Sources */,
 				D0BB33FA20430F1700ED64E5 /* PhotoPreviewViewController.swift in Sources */,
 				D0BB33EA204304EE00ED64E5 /* RootConnector.swift in Sources */,
